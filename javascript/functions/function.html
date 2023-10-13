@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+
+        function sum(a, b, func) {
+            console.log(func)
+            console.log(typeof func)
+            func(a, b)
+            return a + b;
+        }
+
+        sum(2, 4, (a, b) => alert(`Hello ${a} ${b}`))
+
+    </script>
+</body>
+</html>

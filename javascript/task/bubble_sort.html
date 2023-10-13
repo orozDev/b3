@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble sort</title>
+</head>
+<body>
+    <script>
+
+        const nums = [2, 1, 0, 226, 5]
+  
+        for(let i = 0; i < nums.length; i++) {
+            for(let j = i + 1; j < nums.length; j++) {
+                if(nums[i] > nums[j]) {
+                    const temp = nums[i]
+                    nums[i] = nums[j]
+                    nums[j] = temp
+                }
+            }
+            console.log(nums)
+        }
+
+    console.log('_________')
+
+        console.log(nums)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+<body>
+    <script>
+
+        const categories = [
+            {
+                id: 1,
+                name: 'Cell Phones',
+            },
+            {
+                id: 2,
+                name: 'Tablets',
+            },
+            {
+                id: 3,
+                name: 'Laptops',
+            }
+        ]
+
+        const tags = [
+            {
+                id: 1,
+                name: '#Iphone',
+            },
+            {
+                id: 2,
+                name: '#15pro',
+            },
+            {
+                id: 3,
+                name: '#Ipad',
+            },
+            {
+                id: 4,
+                name: '2023',
+            },
+            {
+                id: 5,
+                name: '#Phone 12',
+            },
+            {
+                id: 6,
+                name: '#Macbooks',
+            },
+            {
+                id: 7,
+                name: '#ForProgramming',
+            }
+        ]
+
+        const products = [
+            {
+                name: 'Ihpone 15 pro',
+                price: 1200,
+                category: 1,
+                tags: [ 1, 2 ],
+            },
+            {
+                name: 'Ipad 7',
+                price: 600,
+                category: 2,
+                tags: [ 3, 4 ],
+            },
+            {
+                name: 'Ihpone 12 pro',
+                price: 500,
+                category: 1,
+                tags: [ 5, 6 ],
+            },
+            {
+                name: 'Macbook pro 15',
+                price: 1700,
+                category: 3,
+                tags: [ 6, 7 ],
+            },
+        ]
+
+        const genres = [
+            {
+                id: 1,
+                name: 'Comedy',
+            },
+            {
+                id: 2,
+                name: 'Adventure',
+            }
+        ]
+
+        const movies = [
+            {
+                name: 'Movie',
+                genre: 1,
+                tags: [ 1, 2 ]
+            },
+            {
+                name: 'Movie 2',
+                genre: 2,
+                tags: [ 3, 4 ]
+            }
+        ]
+
+        /*const tempProducts = products.map((item, idx, arr) => ({ 
+            ...item, 
+            category: categories.find(category => category.id === item.category),
+            tags: tags.filter(tag => item.tags.includes(tag.id))
+        }))*/
+
+        const leftJoinAndSelect = (options) => {
+            console.log(options)
+            const res = options.mainData.map(item => {
+                const tempItem = { ...item }
+
+                console.log('item: ', item)
+
+                options.joinOptions.forEach(joinOption => {
+                    console.log('    joinOption.field: ' + joinOption.field)
+                    if (joinOption.isMany) {
+
+                        tempItem[joinOption.field] = joinOption.joinerData.filter(joinerItem => {
+                            console.log('        joinerItem: ', joinerItem )
+                            console.log('        item[joinOption.field]: ', item[joinOption.field])
+                            return item[joinOption.field].includes(joinerItem.id)
+                        })
+                    }
+                    else {
+                        tempItem[joinOption.field] = joinOption.joinerData.find(
+                            joinerItem => {
+                                console.log('        joinerItem: ', joinerItem )
+                                console.log('        item[joinOption.field]: ', item[joinOption.field])
+                                return joinerItem.id === item[joinOption.field]
+                            }
+                        )
+                    }
+                })
+
+                console.log('     tempItem: ', tempItem)
+
+                return tempItem
+            })
+
+            return res
+        }
+
+        const res =  leftJoinAndSelect({
+            mainData: products,
+            joinOptions: [
+                {
+                    field: 'category',
+                    joinerData: categories,
+                    isMany: false,
+                },
+                {
+                    field: 'tags',
+                    joinerData: tags,
+                    isMany: true,
+                },
+            ]
+        })
+
+
+
+        console.log( res )
+        console.log( products )
+
+        const changedMoivesCopy = leftJoinAndSelect({
+            mainData: movies,
+            joinOptions: [
+                {
+                    field: 'genre',
+                    joinerData: genres,
+                    isMany: false,
+                }, 
+                {
+                    field: 'tags',
+                    joinerData: tags,
+                    isMany: true
+                }
+            ]
+        })
+
+        console.log( changedMoivesCopy )
+        console.log( movies )
+
+    </script>
+</body>
+</html>

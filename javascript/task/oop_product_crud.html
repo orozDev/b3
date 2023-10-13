@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP Product CRUD</title>
+</head>
+<body>
+    <script>
+
+
+        class ProductManager {
+
+
+            constructor(products) {
+                this.products = products;
+                this.initialId = 4
+            }
+
+            all() {
+                return this.products
+            }
+
+            get(id) {
+                return this.products.find(item => item.id === id)
+            }
+
+            create(name, price) {
+                const id = this.initialId
+                this.products.push({id, name, price})
+                this.initialId++
+                return {id, name, price}
+            }
+
+        }
+ 
+        class ProductController {
+
+           
+            options = [
+                {
+                    key: 1,
+                    title: 'Get All Products',
+                    callback: 'listProducts'
+                },
+                {
+                    key: 2,
+                    title: 'Get one Product by id',
+                    callback: 'getProduct'
+                },
+                {
+                    key: 3,
+                    title: 'Create a new Product',
+                    callback: 'createProduct'
+                },
+                {
+                    key: 4,
+                    title: 'Edit a Product',
+                    callback: 'editingProduct'
+                },
+                {
+                    key: 5,
+                    title: 'Delete a Product',
+                    callback: 'deleteProduct'
+                },
+            ]
+
+            constructor(title = 'PRODUCT APP', products) {
+                this.title = title;
+                this.productManager = new ProductManager(products);
+            }
+
+            listProducts() {
+
+                const limit = 2
+                const offset = 1
+    
+                const products = this.productManager.all()
+
+
+                let messageListProducts = 'All Products:\n'
+
+                for (const product of products) {
+                    messageListProducts += `${product.id}) ${product.name} - ${product.price}\n`
+                }
+
+                alert(messageListProducts)
+
+            }
+
+            getProduct() {
+
+                const id = +prompt('Enter id of product')
+
+                const product = this.productManager.get(id)
+
+                if (!product) alert('Product not found')
+                else alert(`${product.id}) ${product.name} - ${product.price}`)
+
+            }
+
+            createProduct() {
+               
+                const name = prompt('Enter Product Name')
+                const price = +prompt('Enter Product Price')
+                const product = this.productManager.create(name, price)
+                alert(`${product.id}) ${product.name} - ${product.price}`)
+
+            }
+
+            editingProduct() {}
+
+            deleteProduct() {}
+
+            getOptions() {
+                let message = `${this.title}\nSelect an option:\n`
+                for (let option of this.options) {
+                    message += `${option.key}) ${option.title}\n`
+                }
+                return message
+            }
+
+            callOption(key) {
+                const option = this.options.find(item => item.key === key)
+                if (!option) alert(`Option ${option} is not supported`)
+                else this[option.callback]()
+            }
+
+        }
+
+        const bootstrap = () => {
+            const products = [
+            {
+                id: 1,
+                name: 'Iphone 15 pro max',
+                price: 1200
+            },
+            {
+                id: 2,
+                name: 'Iphone 14 pro max',
+                price: 1000
+            },
+            {
+                id: 3,
+                name: 'Iphone 13 pro max',
+                price: 900
+            },
+        ]
+            const app = new ProductController('Products App', products);
+            while (true) {
+
+                const option = +prompt(app.getOptions())
+                app.callOption(option)
+            }
+        }
+
+        bootstrap()
+
+    </script>
+</body>
+</html>

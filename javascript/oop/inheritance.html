@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+    <script>
+
+        class Person {
+            constructor({fullName, age}) {
+                this.fullName = fullName, 
+                this.age = age
+            }
+
+            sayHello() {
+                alert(`Person ${this.fullName} said hello`)
+            }
+        }
+
+
+        class Itishnik extends Person {
+            constructor({fullName, age, level = 'junior', experience = 1}) {
+                super({fullName, age})
+                this.level = level
+                this.experience = experience
+            }
+
+            sayHello() {
+                super.sayHello()
+                alert(`Itishnik ${this.fullName} said hello`)
+            }
+        }
+
+        const oroz = new Itishnik({
+            fullName: 'oroz', 
+            age: 20, 
+            level: 'middle', 
+            experience: 3
+        })
+        
+        console.log(oroz)
+
+        oroz.sayHello()
+
+    </script>
+</body>
+</html>

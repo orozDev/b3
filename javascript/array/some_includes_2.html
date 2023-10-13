@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some Includes 2</title>
+</head>
+<body>
+    <script>
+
+        function Product({ name, description, price, discount }) {
+            this.name = name;
+            this.description = description;
+            this.price = price;
+            this.discount = discount;
+            this.discountPrice = () => this.price - (this.price * this.discount / 100);
+        }
+
+        const products = [
+            new Product({
+                name: 'Laptop',
+                description: 'Laptop Description',
+                price: 100,
+                discount: 10
+            }),
+            new Product({
+                name: 'Tablet',
+                description: 'Tablet Description',
+                price: 500,
+                discount: 5
+            }),
+            new Product({
+                name: 'Mobile',
+                description: 'Mobile Description',
+                price: 200,
+                discount: 2
+            })
+        ]
+
+        // const res = products.some(product => product.discountPrice() <= 900)
+        // const res = products.includes( )
+
+
+        const res = products.some(product => product.price.toString().length === 4)
+
+        alert(res)
+
+    </script>
+</body>
+</html>

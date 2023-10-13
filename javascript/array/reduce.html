@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array method reduce</title>
+</head>
+<body>
+    <script>
+
+        const nums = [3, 23, 324, 234234, 3, 4, 23, 53, 5, 4353]
+
+        console.log(nums.indexOf( 234234 ))
+
+        const sum = nums.reduce((prevRes, elem, idx, arr) => {
+            console.log(`${prevRes} - ${elem}`)
+            console.log(idx, arr)
+
+            return prevRes + elem
+
+        }, 0)
+
+        console.log(sum)
+
+        const names = ['oroz', 'malik', 'aziz aka', 'nursultan', 'bahrom', 'mamyrjon']
+
+        console.log( names.join(', ') )
+
+
+        console.log( names.reduce((acc, elem, idx) => {
+            if (idx === 0) return elem
+            return acc + ', ' + elem 
+        }, '') )
+
+
+
+    </script>
+</body>
+</html>

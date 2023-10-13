@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array find</title>
+</head>
+<body>
+    <script>
+
+        const products = [
+            {id: 1, name: 'smart watch', price: 400},
+            {id: 2, name: 'iphone 14 pro', price: 1200},
+            {id: 3, name: 'iphone 12 pro', price: 1000},
+            {id: 4, name: 'iphone 11 pro', price: 800},
+            {id: 5, name: 'macbook pro 13 2017', price: 800},
+            {id: 6, name: 'iphone 12 mini', price: 500},
+            {id: 7, name: 'iphone 11 mini', price: 400},
+        ]
+
+        const cheapProduct = products.find(item => item.price > 400)
+
+        console.log(cheapProduct)
+
+        const iphonePro14 = products.find(item => item.name.includes('pro'))
+
+        console.log(iphonePro14)
+
+        let isBreak = false
+        for(let i = 0; i < products.length; i++) {
+            for (let j = 0; j < products[i].name.length; j++) {
+                if (products[i].name[j] === 'p' && 
+                    products[i].name[j + 1] === 'r' && 
+                    products[i].name[j + 2] === 'o') {
+                        console.log(products[i].name)
+                        isBreak = true
+                }
+            }
+            if (isBreak) break    
+        }
+
+    </script>
+</body>
+</html>

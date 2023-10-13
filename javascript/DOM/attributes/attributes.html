@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: 'Arial';
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding-block: 40px;
+        }
+        .mb-4 {
+            margin-bottom: 4rem;
+        }
+        .text-end {
+            text-align: end;
+        }
+        .card {
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 15px;
+        }
+    </style>
+    <title>DOM - HTML Attributes</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mb-4"><button onclick="createItem()">Add a new item</button></div>
+
+        <div id="container">
+            <div class="card" id="card_1">
+                <div class="text-end">
+                    <button onclick="deleteItem(1)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <h2>Card 1</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Explicabo aliquam expedita placeat in omnis doloremque eveniet 
+                    a, fugiat iste harum? Fugit minus commodi deserunt illo aperiam 
+                    facere corrupti saepe inventore.
+                </p>
+            </div>
+
+            <div class="card" onclick="switchBg(this)" id="card_1">
+                <div class="text-end">
+                    <button onclick="deleteItem(1)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <h2>Card 1</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Explicabo aliquam expedita placeat in omnis doloremque eveniet 
+                    a, fugiat iste harum? Fugit minus commodi deserunt illo aperiam 
+                    facere corrupti saepe inventore.
+                </p>
+            </div>
+
+            <div class="card" onclick="switchBg(this)" id="card_1">
+                <div class="text-end">
+                    <button onclick="deleteItem(1)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <h2>Card 1</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Explicabo aliquam expedita placeat in omnis doloremque eveniet 
+                    a, fugiat iste harum? Fugit minus commodi deserunt illo aperiam 
+                    facere corrupti saepe inventore.
+                </p>
+            </div>
+
+            <div class="card" onclick="switchBg(this)" id="card_1">
+                <div class="text-end">
+                    <button onclick="deleteItem(1)"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <h2>Card 1</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Explicabo aliquam expedita placeat in omnis doloremque eveniet 
+                    a, fugiat iste harum? Fugit minus commodi deserunt illo aperiam 
+                    facere corrupti saepe inventore.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const container = document.querySelector('#container');
+        let i = 2
+
+        const switchBg = (card) => {
+            if (card.hasAttribute('style')) {
+                card.removeAttribute('style')
+            }
+            else {
+                card.setAttribute('style', 'background-color: red')
+            }
+        }
+          
+        const createItem = () => {
+            container.innerHTML += `
+            <div class="card" onclick="switchBg(this)" id="card_${i}">
+                    <div class="text-end">
+                        <button onclick="deleteItem(${i})"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <h2>Card ${i}</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Explicabo aliquam expedita placeat in omnis doloremque eveniet 
+                        a, fugiat iste harum? Fugit minus commodi deserunt illo aperiam 
+                        facere corrupti saepe inventore.
+                    </p>
+                </div>
+            </div>
+            `
+            i++
+        }
+
+        const deleteItem = (id) => {
+            const item = document.querySelector(`#card_${id}`)
+
+            item.remove()
+        }
+      
+
+    </script>
+</body>
+</html>

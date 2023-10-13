@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time palindrom</title>
+</head>
+<body>
+    <script>
+
+        const [hour, minute] = prompt('Enter time').split(':')
+
+        const [hourNum, minuteNum] = [+hour, +minute]
+
+        let result = ''
+        if(hourNum < 10 && hourNum > 6) {
+            result += '10:01'
+        }
+        else if (minuteNum > +`${hour[1]}${hour[0]}`) {
+            const nextHourNum = hourNum + 1
+            const nextHour = String(nextHourNum)
+            if ( nextHour >= 23 && +`${nextHour[1]}${nextHour[0]}` > 32 ) {
+                result = '00:00'
+            } else {
+                result += nextHour + ':' + nextHour[1]+nextHour[0]
+            }
+        } 
+        else {
+            result += hour + ':' + hour[1] + hour[0]
+        }
+
+        alert(result)
+
+    </script>
+</body>
+</html>

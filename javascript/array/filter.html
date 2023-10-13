@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+</head>
+<body>
+    <script>
+
+        const products = [
+            {id: 1, name: 'smart watch', price: 400, category: 'watches'},
+            {id: 2, name: 'iphone 14 pro', price: 1200, category: 'phones'},
+            {id: 3, name: 'iphone 12 pro', price: 1000},
+            {id: 4, name: 'iphone 11 pro', price: 800},
+            {id: 5, name: 'macbook pro 13 2017', price: 800},
+            {id: 6, name: 'iphone 12 mini', price: 500},
+            {id: 7, name: 'iphone 11 mini', price: 400},
+        ]
+
+        const res = products.filter(item => item.price > 400)
+
+        console.log(res)
+
+
+    </script>
+</body>
+</html>

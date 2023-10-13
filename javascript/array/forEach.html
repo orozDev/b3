@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for Each</title>
+</head>
+<body>
+    <script>
+
+        const nums = [1, 2, 3, 4, 5]
+
+        nums.forEach((item, idx, arr) => {
+            if (item % 2 === 0) console.log(item)
+        })
+
+        let sum = 0
+        nums.forEach((item, idx, arr) => {
+            sum += item
+        })
+
+        alert(sum)
+
+    </script>
+</body>
+</html>

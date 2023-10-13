@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+<body>
+    <script>
+
+        class User {
+            constructor({
+                username, 
+                email, 
+                phone = '+999777767', 
+                fullName = '', 
+                password = '********'
+            }) {
+                this.username = username;
+                this.email = email;
+                this.phone = phone;
+                this.fullName = fullName;
+                this.password = password;
+            }
+
+            sayHello() {
+                alert(`The user ${this.username} said hello`)
+            }
+        }
+
+        const oroz = new User({
+            username: 'oroz',
+            email: 'oroz@gmail.com',
+            password: '*****'
+        });
+
+
+        console.log(oroz)
+
+        oroz.sayHello()
+
+    </script>
+</body>
+</html>

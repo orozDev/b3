@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Product and Category as class </title>
+</head>
+<body>
+    <script>
+
+        let productId = 1
+        let categoryId = 1
+
+        class Category {
+            constructor(name) {
+                this.id = categoryId
+                this.name = name
+                categoryId++
+            }
+        }
+
+        const categories = [
+            new Category('Laptops'),
+            new Category('Phones'),
+        ]
+
+        class Product {
+
+            constructor({name, price, catId}) {
+                this.id = productId
+                this.name = name
+                this.price = price
+                this.catId = catId
+                productId++
+            }
+
+            getCategory() {
+                return categories.find(item => item.id == this.catId)
+            }
+        }
+
+        const products = [
+            new Product({
+                name: 'Macbook',
+                price: 1220,
+                catId: 2,
+            }),
+            new Product({
+                name: 'Macbook 2',
+                price: 1220,
+                catId: 1,
+            }),
+            new Product({
+                name: 'Macbook 3',
+                price: 1220,
+                catId: 2,
+            }),
+            new Product({
+                name: 'Macbook 4',
+                price: 1220,
+                catId: 1,
+            }),
+        ]
+
+
+        products.forEach(item => {
+            console.log(item.name, item.getCategory())
+        })
+    </script>
+</body>
+</html>

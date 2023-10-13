@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Prodcuts to object by categoty</title>
+</head>
+<body>
+    <script>
+
+        const prodcucts = [
+            {name: 'Iphone 15 pro max', price: 1200, category: 'Phones'},
+            {name: 'Iphone 16 pro max', price: 1200, category: 'Phones'},
+            {name: 'Iphone 17 pro max', price: 1200, category: 'Phones'},
+            {name: 'IPad 1', price: 2200, category:  'Tablets'},
+            {name: 'IPad 2', price: 2200, category: 'Tablets'},
+            {name: 'IPad 3', price: 2200, category: 'Tablets'},
+            {name: 'Macbook pro M2', price: 4000, category: 'Laptops'},
+            {name: 'Macbook Pro M1', price: 3000, category: 'Laptops'},
+            {name: 'Macbook Pro M3', price: 3000, category: 'Laptops'},
+            {name: 'Apple Watch 7', price: 300, category: 'watches'},
+        ]
+
+
+        const arrayOfProductsToObjectByCategory = (arr) => {
+            let temp = {}
+            for (const product of arr) {
+                const idx = arr.indexOf(product)
+                console.log(idx)
+                if (temp[product.category]) {
+                    temp[product.category].push({
+                        name: product.name,
+                        price: product.price,
+                    })
+                }
+                else temp[product.category] = [{ name: product.name, price: product.price}]
+            }
+
+            return temp 
+        }
+
+        const res = arrayOfProductsToObjectByCategory(prodcucts)
+        console.log(res)
+
+    </script>
+</body>
+</html>

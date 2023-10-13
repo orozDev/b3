@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymorphism</title>
+</head>
+<body>
+    <script>
+
+        class Square {
+            constructor(a) {
+                this.name = 'Square'
+                this.a = a
+            }
+
+            getArea() { 
+                return this.a * this.a
+            }
+        }
+
+        class Triangle {
+            constructor(a, b, c) {
+                this.name = 'Triangle'
+                this.a = a
+                this.b = b
+                this.c = c
+            }
+
+            getArea() { 
+                const s = (this.a + this.b + this.c) / 2
+                return Math.sqrt( s * (s - this.a) * (s - this.b) *  (s - this.c)) 
+            }
+        }
+
+        class Rectangle {
+            constructor(a, b) {
+                this.name = 'Rectangle'
+                this.a = a
+                this.b = b
+            }
+
+
+            getArea() { 
+                return this.a * this.b
+
+            }
+        }
+
+        const square = new Square(5)
+        const triangle = new Triangle(5, 6, 7)
+        const rectangle = new Rectangle(5, 6)
+
+        console.log(square instanceof Triangle)
+
+        for (const item of [ square, rectangle, triangle ]) {
+            console.log(` ${item.name}'s area is ${item.getArea()} `)
+        }
+
+
+    </script>
+</body>
+</html>

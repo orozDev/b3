@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array map</title>
+</head>
+<body>
+    <script>
+
+        let nums = [12, 32, 324, 32423, 32423, 23423, 23423]
+
+        let numsCopy = nums.map((elem, idx, arr) => {
+            if (elem %  2 !== 0) {
+                return elem + 1
+            }
+            return elem
+        }) 
+
+        console.log(numsCopy)
+        console.log(nums)
+
+    </script>
+</body>
+</html>

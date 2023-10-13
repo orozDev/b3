@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM get Elements</title>
+</head>
+<body>
+    <div>
+        <h1>Hello World</h1>
+        <ul>
+            <li class="example">
+                Html
+                <span>*</span>
+            </li>
+            <li class="example">CSS <span>*</span></li>
+            <li class="example">JavaScript <span>*</span></li>
+            <li>
+                <span>Backend</span>
+                <ul>
+                    <li>Python</li>
+                    <li id="django">Django</li>
+                    <li id="rest_framework">Rest Framework</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const elem = document.body.children[0].children[1].childNodes[7].childNodes[3].children[1]
+        console.log(elem)
+
+        const elem2 = document.querySelector('#django')
+        console.log(elem2)
+
+        const elems = document.querySelectorAll('.example')
+
+
+        for (const item of elems) {
+            console.log(item.textContent + ' - ' + item.innerText)
+            item.innerHTML += '<i>This example</i>'
+        }
+
+        const elem3 = document.getElementById('rest_framework')
+        console.log(elem3)
+
+
+        const elem4 = document.getElementsByClassName('example')
+        console.log(elem4[1])
+
+
+        const liElems = document.getElementsByTagName('li')
+        console.log(liElems)
+    </script>
+
+</body>
+</html>

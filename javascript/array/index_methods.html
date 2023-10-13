@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index methods</title>
+</head>
+<body>
+    <script>
+
+        const products = [
+            {name: 'Iphone 15 pro max', price: 1200, category: 'Phones'},
+            {name: 'Iphone 16 pro max', price: 1200, category: 'Phones'},
+            {name: 'Iphone 17 pro max', price: 1200, category: 'Phones'},
+            {name: 'IPad 1', price: 2200, category:  'Tablets'},
+            {name: 'IPad 2', price: 2200, category: 'Tablets'},
+            {name: 'IPad 3', price: 2200, category: 'Tablets'},
+            {name: 'Macbook pro M2', price: 4000, category: 'Laptops'},
+            {name: 'Macbook Pro M1', price: 3000, category: 'Laptops'},
+            {name: 'Macbook Pro M3', price: 3000, category: 'Laptops'},
+            {name: 'Apple Watch 7', price: 300, category: 'watches'},
+        ]
+
+        for (const product of products) {
+            console.log(product)
+            const idx = products.indexOf( product )
+            console.log(idx)
+        }
+        console.log('________________________________________________________________')
+
+        const res = products.findIndex((item, idx, array) => {
+            return item.name.startsWith('IPad')
+        })
+
+        console.log(res)
+
+    </script>
+</body>
+</html>

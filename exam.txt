@@ -1,0 +1,244 @@
+1) 
+    Сделать функцию которая преобразует массив продуктов к определённому виду объекта
+    
+    [
+        {
+            name: 'Iphone 11 pro',
+            price: 500,
+            category: 'phones'
+        },
+        {
+            name: 'Iphone 12 pro',
+            price: 600,
+            category: 'phones'
+        },
+        {
+            name: 'Ipad 4',
+            price: 300,
+            category: 'tablets'
+        },
+        {
+            name: 'Macbook pro 2017',
+            price: 300,
+            category: 'laptops'
+        },
+    ]
+
+    ------------>
+    
+    {
+        phones: [
+            {
+                name: 'Iphone 11 pro',
+                price: 500
+            },
+            {
+                name: 'Iphone 12 pro',
+                price: 600
+            }
+        ],
+        tablets: [
+            {
+                name: 'Ipad 4',
+                price: 300
+            }
+        ]
+        laptops: [
+            {
+            name: 'Macbook pro 2017',
+            price: 300
+            }
+        ]
+    }
+
+    Таким образом получить данные и вывести в консоль
+
+2) 
+    Вывести все продукты y которых цена меньше чем N
+    N - Должен вестись пользователям
+
+    [
+        {
+            name: 'Iphone 11 pro',
+            price: 500,
+            category: 'phones'
+        },
+        {
+            name: 'Iphone 12 pro',
+            price: 600,
+            category: 'phones'
+        },
+        {
+            name: 'Ipad 4',
+            price: 700,
+            category: 'tablets'
+        },
+        {
+            name: 'Macbook pro 2017',
+            price: 500,
+            category: 'laptops'
+        },
+           {
+            name: 'Ihpone 14',
+            price: 900,
+            category: 'phones'
+        },
+        {
+            name: 'Macbook pro 2019',
+            price: 1100,
+            category: 'laptops'
+        },
+           {
+            name: 'Ipad 7',
+            price: 900,
+            category: 'tablets'
+        },
+        {
+            name: 'Macbook pro 2021',
+            price: 1600,
+            category: 'laptops'
+        },
+    ]
+
+3)
+    Нужно преобразовать цены продуктов с учётом процентной скидки который ввёл пользователь
+       [
+        {
+            name: 'Iphone 11 pro',
+            price: 500,
+            category: 'phones'
+        },
+        {
+            name: 'Iphone 12 pro',
+            price: 600,
+            category: 'phones'
+        },
+        {
+            name: 'Ipad 4',
+            price: 700,
+            category: 'tablets'
+        },
+        {
+            name: 'Macbook pro 2017',
+            price: 500,
+            category: 'laptops'
+        },
+           {
+            name: 'Ihpone 14',
+            price: 900,
+            category: 'phones'
+        },
+        {
+            name: 'Macbook pro 2019',
+            price: 1100,
+            category: 'laptops'
+        },
+           {
+            name: 'Ipad 7',
+            price: 900,
+            category: 'tablets'
+        },
+        {
+            name: 'Macbook pro 2021',
+            price: 1600,
+            category: 'laptops'
+        },
+    ]
+
+4) 
+    Проверить на наличие продуктов с названием 'pro' или 'PRO'
+    [
+        {
+            name: 'Iphone 11 pro',
+            price: 500,
+            category: 'phones'
+        },
+        {
+            name: 'Iphone 12 pro',
+            price: 600,
+            category: 'phones'
+        },
+        {
+            name: 'Ipad 4',
+            price: 700,
+            category: 'tablets'
+        },
+        {
+            name: 'Macbook pro 2017',
+            price: 500,
+            category: 'laptops'
+        },
+           {
+            name: 'Ihpone 14',
+            price: 900,
+            category: 'phones'
+        },
+        {
+            name: 'Macbook pro 2019',
+            price: 1100,
+            category: 'laptops'
+        },
+           {
+            name: 'Ipad 7',
+            price: 900,
+            category: 'tablets'
+        },
+        {
+            name: 'Macbook pro 2021',
+            price: 1600,
+            category: 'laptops'
+        },
+    ]
+
+5) Сделать сортировку продуктов по ценам от меньшего к большему
+
+    [
+        {
+            name: 'Iphone 11 pro',
+            price: 500,
+            category: 'phones'
+        },
+        {
+            name: 'Iphone 12 pro',
+            price: 600,
+            category: 'phones'
+        },
+        {
+            name: 'Ipad 4',
+            price: 700,
+            category: 'tablets'
+        },
+        {
+            name: 'Macbook pro 2017',
+            price: 500,
+            category: 'laptops'
+        },
+           {
+            name: 'Ihpone 14',
+            price: 900,
+            category: 'phones'
+        },
+        {
+            name: 'Macbook pro 2019',
+            price: 1100,
+            category: 'laptops'
+        },
+           {
+            name: 'Ipad 7',
+            price: 900,
+            category: 'tablets'
+        },
+        {
+            name: 'Macbook pro 2021',
+            price: 1600,
+            category: 'laptops'
+        },
+    ]
+
+6)
+    Сделайте консольном приложение CRUD для продуктов.
+    
+    1. У продуктов должна присутствовать ID
+    2. Должен быть create, update, delete, get all products
+    3. Получение продуктов по id
+    4. Поиск продуктов по name. Если пользователь ввёл 'Iphone', То должны вводиться все айфоны с приставкой 'Iphone' если даже 'Apple Iphone 15 pro'. 
