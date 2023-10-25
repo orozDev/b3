@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested events</title>
+</head>
+<body>
+    
+    <!-- <form onclick="nestedElemFunc(this)">
+        FORM
+        <div onclick="nestedElemFunc(this)">
+            DIV
+            <p onclick="nestedElemFunc(this)">
+                P
+            </p>
+        </div>
+    </form>
+
+    <script>
+        const nestedElemFunc = (elem) => {
+            console.log(elem)
+        }
+    </script> -->
+
+        
+    <form id="form">
+        FORM
+        <div id="div">
+            DIV
+            <p id="p">
+                P
+            </p>
+        </div>
+    </form>
+
+    <a 
+        id="a"
+        href="https://www.youtube.com/results?search_query=django+push+notifications+firebase+"
+    >
+        Click me
+    </a>
+
+    <script>
+
+        const form = document.querySelector('#form')
+        const div = document.querySelector('#div')
+        const p = document.querySelector('#p')
+        const a = document.querySelector('#a')
+
+        const nestedElemFunc = (e) => {
+            console.log(e.target)
+            e.stopPropagation()
+        }
+
+        p.addEventListener('click', nestedElemFunc)
+        div.addEventListener('click', nestedElemFunc)
+        form.addEventListener('click', nestedElemFunc)
+
+        a.addEventListener('click', e => {
+            alert(e.target.href)
+            e.preventDefault()
+        })
+    </script>
+
+</body>
+</html>

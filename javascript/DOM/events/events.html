@@ -33,7 +33,7 @@
             height: 30px;
             background-color: green;
             position: absolute;
-            transition: .5s linear;
+            transition: .3s linear;
         }
     </style>
 </head>
@@ -50,10 +50,14 @@
         const turtle = document.querySelector('.turtle')
 
         box.addEventListener('mousemove', e => {
-            turtle.style.left = `${e.layerX}px`
-            turtle.style.top = `${e.layerY}px`
+            turtle.style.left = `${e.layerX - 20}px`
+            turtle.style.top = `${e.layerY - 20}px`
+             console.log( turtle.getAttribute('style'))
         })
 
+        turtle.addEventListener('mouseover', () => alert('game over'))
+        
+     
     </script>
 </body>
 </html>
