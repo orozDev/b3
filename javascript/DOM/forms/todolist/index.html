@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Forms 1</title>
+</head>
+<body>
+
+
+
+    <div class="modal fade" id="createTaskModal" tabindex="-1" aria-labelledby="createTaskModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createTaskModalLabel">Adding new task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="createTaskForm" name="createTaskForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="name" required placeholder="Enter name of task">
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="desc" class="form-control" rows="10"
+                                placeholder="Enter description of task" required></textarea>
+
+                        </div>
+                        <div class="mb-3">
+                            <input type="date" class="form-control" required name="deadline">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="createTaskForm" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_own py-4">
+
+        <h2 class="text-center">Todo List</h2>
+
+        <div class="text-end mb-5">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createTaskModal">
+                Add new Task <i class="fa-solid fa-circle-plus"></i>
+            </button>
+        </div>
+
+
+        <div>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Is Completed</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="taskContainer">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Lorem ipsum dolor sit.</td>
+                        <td>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique minima doloribus
+                                fugit sapiente culpa provident inventore laudantium a, nostrum asperiores delectus
+                                facere, odit ullam ut aut qui soluta eveniet alias.
+                            </p>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="">
+                        </td>
+                        <td>
+                            <div class="d-flex gap-3">
+                                <button class="btn btn-sm btn-warning"><i
+                                        class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
