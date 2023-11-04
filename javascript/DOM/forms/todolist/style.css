@@ -7,3 +7,7 @@ th {
     width: 95%;
     margin: 0 auto;
 }
+
+#searchInput {
+    width: 500px;
+}
