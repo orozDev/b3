@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+
+    fdsfsdf
+
+    <script>
+
+        const nums = {name: [1, 2, 3, 4, 5]}
+
+        sessionStorage.setItem('nums', JSON.stringify(nums))
+
+        const numsFromStorage = JSON.parse(sessionStorage.getItem('nums'))
+
+        console.log( numsFromStorage)
+
+
+    </script>
+    
+</body>
+</html>
