@@ -17,3 +17,4 @@ print(
     f'4) This is num_as_str: {bool_as_num} - {type(bool_as_num)}',
     sep='\n'
 )
+
