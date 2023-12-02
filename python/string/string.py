@@ -1,6 +1,7 @@
 name = 'python is the most popular pr language'
 
-def concat(val, start = 0, end = None, step = 1):
+
+def concat(val, start=0, end=None, step=1):
     res = ''
     if end is None:
         end = len(val)
@@ -9,5 +10,6 @@ def concat(val, start = 0, end = None, step = 1):
 
     return res
 
-print( name[0 : : 2] )
-print( concat(name, 0, 6) )
+
+print(name[0:: 2])
+print(concat(name, 0, 6))

@@ -8,4 +8,10 @@ print(nums[0], nums[-2])
 
 nums.reverse()
 
+nums2 = nums.copy()
+
+nums2.pop()
+
+
 print(nums)
+print(nums2)
