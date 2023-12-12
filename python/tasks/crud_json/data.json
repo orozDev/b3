@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iphone 15",
+      "price": 1400,
+      "category": 1
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S22",
+      "price": 1200,
+      "category": 1
+    },
+    {
+      "id": 3,
+      "name": "MacBook Pro 2023",
+      "price": 2000,
+      "category": 2
+    },
+    {
+      "id": 4,
+      "name": "third",
+      "price": 1234,
+      "category": 3
+    },
+    {
+      "id": 5,
+      "name": "LG OLED 4K TV",
+      "price": 1800,
+      "category": 4
+    },
+    {
+      "id": 6,
+      "name": "ewrw",
+      "price": 12,
+      "category": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "phone"
+    },
+    {
+      "id": 2,
+      "name": "notes"
+    },
+    {
+      "id": 3,
+      "name": "games"
+    },
+    {
+      "id": 4,
+      "name": "tv"
+    }
+  ]
+}
