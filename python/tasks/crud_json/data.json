@@ -1,12 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "iphone 15",
-      "price": 1400,
-      "category": 1
-    },
-    {
       "id": 2,
       "name": "Samsung Galaxy S22",
       "price": 1200,
@@ -35,6 +29,12 @@
       "name": "ewrw",
       "price": 12,
       "category": 3
+    },
+    {
+      "id": 7,
+      "name": "12",
+      "price": 12,
+      "category": 1
     }
   ],
   "categories": [
