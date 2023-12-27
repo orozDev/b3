@@ -53,3 +53,37 @@ def delete_product_by_id():
         print(f"The product with ID {id} is deleted successfully")
     else:
         print(f"The product with ID {id} does not exist")
+
+
+def update_product_by_id():
+    list_of_products()
+    id = int(input('\nEnter product ID: '))
+
+    product = get_product(id)
+    if not product:
+        print(f"The product with ID {id} does not exist")
+
+    name = input('Enter product name: ')
+    if name:
+        product['name'] = name
+
+    price = input('Enter product price: ')
+    if price:
+       product['price'] = int(price)
+
+    while True:
+        print('\n')
+        list_of_categories()
+        category_id = input('\nEnter product category id: ')
+        if category_id == '':
+            break
+        category = get_category(int(category_id))
+        if category is not None:
+            product['category'] = category
+            break
+        print(f'The category with id {category_id} does not exist, enter again!')
+
+
+
+
+

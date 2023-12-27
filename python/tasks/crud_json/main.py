@@ -1,6 +1,6 @@
 # import folder.views as views
 # from folder import views as v
-from controllers import list_of_products, get_product_by_id, create_new_product, delete_product_by_id
+from controllers import list_of_products, get_product_by_id, create_new_product, delete_product_by_id, update_product_by_id
 
 option_messages = '''
 
@@ -29,7 +29,7 @@ def bootstrap():
             create_new_product()
 
         elif option == 4:
-            list_of_products()
+            update_product_by_id()
 
         elif option == 5:
             delete_product_by_id()
