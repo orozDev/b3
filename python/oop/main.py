@@ -1,45 +1,59 @@
 class Car:
-    # brand - Свойства
 
-    def __init__(self, brand, model, color, price, year):
+    # def __new__(cls, *args, **kwargs):
+    #     print(args, kwargs)
+    #
+
+    def __init__(self, brand, model, color, year, price):
+        print(2)
         self.brand = brand
         self.model = model
         self.color = color
-        self.price = price
         self.year = year
+        self.price = price
         self.is_started = False
 
+    def get_full_name(self):
+        return f'{self.brand} {self.model}'
+
     def start(self):
-        self.is_started = True
-        print(f'{self.brand} {self.model} has been started')
+        if not self.is_started:
+            print(f'The car {self.get_full_name()} has been started!')
+            self.is_started = True
+        else:
+            print('The car is already started')
 
     def stop(self):
         if self.is_started:
-            print(f'{self.brand} {self.model} has been stopped')
+            print(f'The car {self.get_full_name()} has been stopped!')
+            self.is_started = False
         else:
-            print(f'Before that you should start the car {self.brand} - {self.model}')
+            print('Before that the car must be started')
 
-    def restart(self):
-        self.stop()
-        self.start()
-
-    # def method(self): - Методы
-    #     pass
+    def __str__(self):
+        return self.get_full_name()
 
 
 bmw = Car(
-    'BMW', 'M5', 'black', 10000, 2010
+    'BMW',
+    'M5F90',
+    'Black',
+    2022,
+    80000,
 )
 
-camry = Car(
-    'Toyota', 'Camry 3.5', 'white', 12000, 2016
+# bmw.start()
+# bmw.start()
+# bmw.stop()
+# bmw.start()
+# bmw.stop()
+# bmw.stop()
+
+
+print(
+    bmw.__dict__,
+    bmw.__str__(),
+    sep='\n'
 )
 
-camry.start()
-camry.stop()
-
-# camry.restart()
-
-# print(
-#     f'{camry.brand} - {camry.model}'
-# )
+print(bmw)
